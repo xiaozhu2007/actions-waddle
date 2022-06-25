@@ -1,3 +1,1 @@
-Now the time is 
-
- $(date +"%Y-%m-%d %H:%M:%S %P")
+Now the time is 2022-06-25 14:33:13 pm
