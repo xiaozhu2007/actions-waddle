@@ -1,6 +1,10 @@
 name: Main
 
 on:
+  push:
+    branch:
+      - master
+  workflows_dispatch:
   schedule:
     - cron: '*/5 * * * *'
 
