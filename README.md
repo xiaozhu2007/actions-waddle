@@ -1,1 +1,3 @@
-Now the time is \n 2022-06-25 14:29:17 pm 
+Now the time is 
+
+ $(date +"%Y-%m-%d %H:%M:%S %P")
