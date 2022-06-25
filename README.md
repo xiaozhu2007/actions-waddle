@@ -1,1 +1,1 @@
-the time is Sat Jun 25 14:26:49 UTC 2022
+Now the time is \n 2022-06-25 14:29:17 pm 
