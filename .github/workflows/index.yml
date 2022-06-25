@@ -2,7 +2,7 @@ name: Main
 
 on:
   push:
-    branch:
+    branches:
       - master
   workflow_dispatch:
   schedule:
@@ -15,7 +15,9 @@ jobs:
       - uses: actions/checkout@v3
       - name: tick
         run: |
-          echo -e 'Now the time is \n\n $(date +"%Y-%m-%d %H:%M:%S %P")' > README.md
+          echo "Now the time is $(date +"%Y-%m-%d %H:%M:%S %P")" > README.md
+          echo "$(date +"%Y-%m-%d %H:%M:%S")" >> time.txt
+          tail -n 200 time.txt > time.txt
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config --global user.name "${GITHUB_ACTOR}"
           git add .
