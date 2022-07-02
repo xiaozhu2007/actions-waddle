@@ -13,13 +13,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: tick
+      - name: Show GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+
+      - name: Generate README.md
         run: |
-          git pull origin master # 考虑延时
+          git pull origin master
           echo "Now the time is $(date +"%Y-%m-%d %H:%M:%S %P")" > README.md
           echo -e "\n---\n" >> README.md
           echo "<small>$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM</small>" >> README.md
           echo "$(date +"%Y-%m-%d %H:%M:%S")" > time.txt
+
+      - name: Commit and Push
+        run: |
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config --global user.name "${GITHUB_ACTOR}"
           git add .
