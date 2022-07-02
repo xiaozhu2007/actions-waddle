@@ -17,6 +17,8 @@ jobs:
         run: |
           git pull origin master # 考虑延时
           echo "Now the time is $(date +"%Y-%m-%d %H:%M:%S %P")" > README.md
+          echo "\n---\n" >> README.md
+          echo "**Ohhh$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM**" >> README.md
           echo "$(date +"%Y-%m-%d %H:%M:%S")" > time.txt
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config --global user.name "${GITHUB_ACTOR}"
