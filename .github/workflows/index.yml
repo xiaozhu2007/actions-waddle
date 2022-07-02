@@ -1,5 +1,8 @@
-name: Once a day
+name: Take it easy
 
+# You know that?
+# The first commit was fdf1479.
+# Donate on afdian.net: https://afdian.net/@xiaozhu2021
 on:
   push:
     branches:
@@ -9,15 +12,10 @@ on:
     - cron: '*/10 */2 * * 1-5'
 
 jobs:
-  tick:
+  auto:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Show GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
-
       - name: Generate README.md
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
@@ -29,7 +27,9 @@ jobs:
           echo -e "\`\`\`txt\n" >> README.md
           echo -e "Latest commit SHA is: ${GITHUB_SHA}" >> README.md
           echo -e "\`\`\`" >> README.md
+          echo [SUCCESS] README.md is OK now!
           echo -e "$(date +"%Y-%m-%d %H:%M:%S")" > time.txt
+          echo [SUCCESS] time.txt is OK now!
 
       - name: Commit and Push
         run: |
