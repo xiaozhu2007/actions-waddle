@@ -19,12 +19,17 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
 
       - name: Generate README.md
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
           git pull origin master
           echo "Now the time is $(date +"%Y-%m-%d %H:%M:%S %P")" > README.md
           echo -e "\n---\n" >> README.md
-          echo "<small>$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM</small>" >> README.md
-          echo "$(date +"%Y-%m-%d %H:%M:%S")" > time.txt
+          echo -e "<small>$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM</small>\n" >> README.md
+          echo -e "```txt\n" >> README.md
+          echo -e "$GITHUB_CONTEXT" >> README.md
+          echo -e "```\n" >> README.md
+          echo -e "$(date +"%Y-%m-%d %H:%M:%S")" > time.txt
 
       - name: Commit and Push
         run: |
