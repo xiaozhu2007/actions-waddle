@@ -9,7 +9,7 @@ on:
       - master
   workflow_dispatch:
   schedule:
-    - cron: '*/10 */2 * * 1-5'
+    - cron: '*/10 1-12 * * 1-5'
 
 jobs:
   auto:
