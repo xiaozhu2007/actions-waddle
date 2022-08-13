@@ -24,7 +24,7 @@ jobs:
           echo "Now the time is $(date +"%Y-%m-%d %H:%M:%S %P")" > README.md
           echo -e "\n---\n" >> README.md
           echo -e "<small>$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM</small>\n" >> README.md
-          echo -e "\`\`\`txt\n" >> README.md
+          echo -e "\`\`\`txt" >> README.md
           echo -e "Latest commit SHA is: ${GITHUB_SHA}" >> README.md
           echo -e "\`\`\`" >> README.md
           echo [SUCCESS] README.md is OK now!
