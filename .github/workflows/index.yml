@@ -9,7 +9,7 @@ on:
       - master
   workflow_dispatch:
   schedule:
-    - cron: '*/10 1-12 * * 1-5'
+    - cron: '*/10 1-12 * * 1-6'
 
 jobs:
   auto:
@@ -23,10 +23,8 @@ jobs:
           git pull origin master
           echo "Now the time is $(date +"%Y-%m-%d %H:%M:%S %P")" > README.md
           echo -e "\n---\n" >> README.md
-          echo -e "<small>$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM</small>\n" >> README.md
-          echo -e "\`\`\`txt" >> README.md
-          echo -e "Latest commit SHA is: ${GITHUB_SHA}" >> README.md
-          echo -e "\`\`\`" >> README.md
+          echo -e "\`$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM\`\n" >> README.md
+          echo -e "\`Latest commit SHA is: ${GITHUB_SHA} \`" >> README.md
           echo [SUCCESS] README.md is OK now!
           echo -e "$(date +"%Y-%m-%d %H:%M:%S")" > time.txt
           echo [SUCCESS] time.txt is OK now!
