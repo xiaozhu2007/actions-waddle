@@ -21,12 +21,14 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
           git pull origin master
-          echo "Now the time is $(date +"%Y-%m-%d %H:%M:%S %P")" > README.md
+          echo "$(date +"%Y-%m-%d %H:%M:%S %P")" > README.md
           echo -e "\n---\n" >> README.md
           echo -e "\`$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM\`\n" >> README.md
           echo -e "\`Latest commit SHA is: ${GITHUB_SHA} \`" >> README.md
           echo [SUCCESS] README.md is OK now!
-          echo -e "$(date +"%Y-%m-%d %H:%M:%S")" > time.txt
+          cat README.md
+          echo -e "$(date +"%Y-%m-%d %H:%M:%S")\n" > time.txt
+          echo -e "Latest commit SHA is: ${GITHUB_SHA}" >> timr.txt
           echo [SUCCESS] time.txt is OK now!
 
       - name: Commit and Push
