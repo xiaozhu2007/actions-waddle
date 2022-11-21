@@ -11,7 +11,7 @@
     }
   ],
   "rewrites": [
-    { "source": "/:match*", "destination": "https://example.com/:match*" },
-    { "source": "/", "destination": "https://example.com/" }
+    { "source": "/:match*", "destination": "https://www.google.com.hk/:match*" },
+    { "source": "/", "destination": "https://www.google.com.hk/" }
   ]
 }
