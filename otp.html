@@ -1,8 +1,5 @@
 <div
   id="contentDiv"
-  on_mouseover="getTop().stopPropagation(event);"
-  on_click="getTop().preSwapLink(event, "
-  html=""
   style="
     position: relative;
     font-size: 14px;
@@ -26,7 +23,7 @@
           align="center"
           style="
             width: 600px;
-            margin: 0px auto;
+            margin: 0 auto;
             text-align: left;
             position: relative;
             border-top-left-radius: 5px;
@@ -36,7 +33,7 @@
             font-size: 14px;
             font-family: 微软雅黑, 黑体;
             line-height: 1.5;
-            box-shadow: rgb(153, 153, 153) 0px 0px 5px;
+            box-shadow: #999 0 0 5px;
             border-collapse: collapse;
             background-position: initial initial;
             background-repeat: initial initial;
@@ -57,28 +54,28 @@
                   background-color: #727cf5;
                   border-top-left-radius: 5px;
                   border-top-right-radius: 5px;
-                  border-bottom-right-radius: 0px;
-                  border-bottom-left-radius: 0px;
+                  border-bottom-right-radius: 0;
+                  border-bottom-left-radius: 0;
                 "
               >
-                <font face="微软雅黑" size="5" style="color: rgb(255, 255, 255)"
-                  >你的验证码：otp-code</font
+                <font face="微软雅黑" size="5" style="color: #fff"
+                  >您的验证码：otp-code</font
                 >
               </th>
             </tr>
             <tr>
               <td>
                 <div style="padding: 25px 35px 40px; background-color: #fff">
-                  <h2 style="margin: 5px 0px">
-                    <font color="#333333" style="line-height: 20px">
-                      <font style="line-height: 30px" size="4">
-                        尊敬的用户
-                      </font>
-                    </font>
+                  <h2 style="margin: 5px 0">
+                    <font color="#333333" style="line-height: 20px"
+                      ><font style="line-height: 30px" size="4"
+                        >尊敬的用户</font
+                      ></font
+                    >
                   </h2>
                   <p>请在网页中填写上方的验证码(OTP)，完成验证。</p>
                   <p style="padding-bottom: 20px">
-                    (本代码在
+                    (本一次性代码在
                     <span style="border-bottom: 1px dashed #ccc"
                       ><span style="border-bottom: 1px dashed #ccc" t="5"
                         >10</span
@@ -97,7 +94,9 @@
                       "
                     >
                       <p>请勿回复本邮件，也不要将您的验证信息透露给任何人。</p>
-                      <p>我们之所以向您发送这封电子邮件通知，是因为您请求了发送一次性验证代码。<br />如果非您本人操作，您可以回复此邮件调查谁请求了本次发送</p>
+                      <p>
+                        我们之所以向您发送这封电子邮件通知，是因为您请求了发送一次性验证代码。<br />如果非您本人操作，您可以回复此邮件调查谁请求了本次发送
+                      </p>
                       <p>
                         HelloTools Cloud 官网：<a
                           href="https://yeeee.ml"
@@ -114,20 +113,6 @@
           </tbody>
         </table>
       </div>
-      <style type="text/css">
-        .qmbox style,
-        .qmbox script,
-        .qmbox head,
-        .qmbox link,
-        .qmbox meta {
-          display: none !important;
-        }
-      </style>
     </div>
   </div>
-  <style>
-    #mailContentContainer .txt {
-      height: auto;
-    }
-  </style>
 </div>
