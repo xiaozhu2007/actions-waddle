@@ -1,24 +1,26 @@
 on:
-  push:
-    branches:
-    - maste
   pull_request:
     branches:
     - master
   workflow_dispatch:
 
 jobs:
-  Gradle_Build:
-    name: Gradle Building
+  main:
     runs-on: ubuntu-latest
     steps:
-      - name: Print the input name to STDOUT
-        run: echo The username is ${{ inputs.username }}
-      - name: Setup Java JDK
-        uses: actions/setup-java@v3.5.1
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Send mail
+        uses: dawidd6/action-send-mail@v3
         with:
-    # The Java version to set up. Takes a whole or semver Java version. See examples of supported syntax in README file
-          java-version: 17
-    # Java distribution. See the list of supported distributions in README file
-          distribution: temurin
-
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{secrets.MAIL_USERNAME}}
+          password: ${{secrets.MAIL_PASSWORD}}
+          subject: '[HelloTools Cloud] 您的今日任务运行成功'
+          body: Build job of ${{github.repository}} completed successfully!
+          to: ${{secrets.MAIL_TO}}
+          from: HelloTools Cloud
+          # Optional recipient of the email response:
+          reply_to: hackpig520+cn@gmail.com
+          priority: low
