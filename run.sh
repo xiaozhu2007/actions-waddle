@@ -7,4 +7,4 @@ function rand(){
 }  
 rnd=$(rand 100000 999999) 
 echo $rnd
-sed -i "s/[[otp-code]]/$rnd" otp.html 
+sed -i "s/otp-code/$rnd" otp.html 
