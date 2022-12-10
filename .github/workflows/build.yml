@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Process
+        run: bash run.sh 
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:
