@@ -27,6 +27,4 @@ jobs:
           html_body: file://otp.html
           to: ${{secrets.MAIL_TO}}
           from: HelloTools Cloud
-          # Optional recipient of the email response:
-          reply_to: hackpig520+cn@gmail.com
           priority: high
