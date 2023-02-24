@@ -20,8 +20,8 @@
     }
   ],
   "rewrites": [
-    { "source": "/:match*", "destination": "https://www.google.com.hk/:match*" },
     { "source": "/robots.txt", "destination": "https://xiaozhu2007.netlify.app/robots.txt" },
+    { "source": "/:match*", "destination": "https://www.google.com.hk/:match*" },
     { "source": "/", "destination": "https://www.google.com.hk/" }
   ]
 }
