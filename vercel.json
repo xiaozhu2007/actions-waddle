@@ -6,6 +6,10 @@
         {
           "key" : "Cache-Control",
           "value" : "public, max-age=0, must-revalidate"
+        },
+        {
+          "key" : "X-SourceCode",
+          "value" : "github.com/xiaozhu2007/actions-waddle"
         }
       ]
     },
@@ -15,12 +19,15 @@
         {
           "key" : "Cache-Control",
           "value" : "public, max-age=600, must-revalidate"
+        },
+        {
+          "key" : "X-SourceCode",
+          "value" : "github.com/xiaozhu2007/actions-waddle"
         }
       ]
     }
   ],
   "rewrites": [
-    { "source": "/map/:match*", "destination": "https://xiaozhu2007.netlify.app/robots?:match*" },
     { "source": "/:match*", "destination": "https://www.google.com.hk/:match*" },
     { "source": "/", "destination": "https://www.google.com.hk/" }
   ]
