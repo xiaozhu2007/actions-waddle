@@ -1,11 +1,11 @@
 {
   "headers": [
     {
-      "source": "/sw.js",
+      "source": "/gen_204",
       "headers" : [
         {
           "key" : "Cache-Control",
-          "value" : "public, max-age=0, must-revalidate"
+          "value" : "public, max-age=114514, must-revalidate"
         },
         {
           "key" : "X-SourceCode",
