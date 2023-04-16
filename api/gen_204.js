@@ -1,3 +1,3 @@
-export default function gen_204(request, response) {
+export default function handler(request, response) {
   response.status(204).send(null);
 }
