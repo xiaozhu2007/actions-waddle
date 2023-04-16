@@ -27,6 +27,7 @@
       ]
     }
   ],
+  "regions": ["hkg1"],
   "rewrites": [
     { "source": "/gen_204", "destination": "/api/gen_204" },
     { "source": "/client_204", "destination": "/api/gen_204" },
