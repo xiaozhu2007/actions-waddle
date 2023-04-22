@@ -45,9 +45,9 @@
       turnstile.render('.captcha', {
         sitekey: '0x4AAAAAAABBzidMnnzlG92Z',
         callback: function (token) {
-          console.log(`[Turnstile Challenge] Success ${token}`);
-          var f = fetch("/api/rate_limit", {
-            body: `token=${token}`,
+          console.log(`[Turnstile Challenge] T0ken:${token}`);
+          var f = fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+            body: `secret=0x4AAAAAAABBzssgfcpBXVvAoaR03SGp6Gg&response=${token}`,
             method: 'POST',
           })
         },
