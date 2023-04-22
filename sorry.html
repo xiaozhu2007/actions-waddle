@@ -45,10 +45,10 @@
 
   <script>
     window.onloadTurnstileCallback = function () {
-      turnstile.render('#captcha', {
+      turnstile.render('.captcha', {
         sitekey: '0x4AAAAAAABBzidMnnzlG92Z',
         callback: function (token) {
-          console.log(`Challenge Success ${token}`);
+          console.log(`[Turnstile Challenge] Success ${token}`);
           document.getElementById("submitBtn").click();
         },
       });
