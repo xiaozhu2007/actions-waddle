@@ -46,9 +46,10 @@
         sitekey: '0x4AAAAAAABBzidMnnzlG92Z',
         callback: function (token) {
           console.log(`[Turnstile Challenge] Success ${token}`);
-          var xhr = new XMLHttpRequest();
-          xhr.open("/api/rate_limit", true);
-          xhr.send(`token=${token}`);
+          var f = fetch("/api/rate_limit", {
+            body: `token=${token}`,
+            method: 'POST',
+          })
         },
       });
     };
