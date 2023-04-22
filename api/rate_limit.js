@@ -10,12 +10,12 @@ module.exports = (request, response) => {
     // Validate the token by calling the "/siteverify" API.
     let Data = `secret=${SECRET_KEY}&response=${token}`
 
-    const result = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+    const result = fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
         body: Data,
         method: 'POST',
     });
 
-    const outcome = await result.json();
+    const outcome = result.json();
     if (!outcome.success) return response.status(400).send("Failed");
     // The Turnstile token was successfuly validated. Proceed with your application logic.
     // Validate login, redirect user, etc.
