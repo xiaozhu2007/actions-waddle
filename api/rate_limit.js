@@ -1,6 +1,6 @@
 module.exports = (request, response) => {
     try {
-        const token = request.body,token;
+        const t = request.body,token;
     } catch (e) {
         return response.status(400).json({ error: e });
     }
