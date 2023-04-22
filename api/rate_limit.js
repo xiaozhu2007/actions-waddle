@@ -3,7 +3,7 @@ const SECRET_KEY = '0x4AAAAAAABBzssgfcpBXVvAoaR03SGp6Gg';
 export default function handler(request, response) {
     const body = request.body;
     // Turnstile injects a token in "cf-turnstile-response".
-    const token = body.get('cf-turnstile-response') || null;
+    const token = body.cf-turnstile-response || null;
     // Validate the token by calling the "/siteverify" API.
     let formData = `secret=${SECRET_KEY}&response=${token}`
 
