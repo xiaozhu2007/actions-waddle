@@ -17,10 +17,7 @@
       font-size: 18px;
     ">
   <div style="max-width: 400px">
-    <form action="/api/rate_limit" method="POST">
-      <div class="captcha"></div>
-      <button style="visibility: hidden;" id="submitBtn" type="submit"></button>
-    </form>
+    <div class="captcha"></div>
     <hr noshade size="1" style="color: #ccc; background-color: #ccc" />
     <br />
     <div style="font-size: 13px">
@@ -49,7 +46,9 @@
         sitekey: '0x4AAAAAAABBzidMnnzlG92Z',
         callback: function (token) {
           console.log(`[Turnstile Challenge] Success ${token}`);
-          document.getElementById("submitBtn").click();
+          var xhr = new XMLHttpRequest();
+          xhr.open("/api/rate_limit", false);
+          xhr.send(`cf-turnstile-response=${token}`);
         },
       });
     };

@@ -17,10 +17,10 @@ export default function handler(request, response) {
 
     const outcome = await result.json();
     if (!outcome.success) {
-        response.redirect(302, "/sorry/index")
+        response.status(400).send("Failed")
     }
     // The Turnstile token was successfuly validated. Proceed with your application logic.
     // Validate login, redirect user, etc.
     // For this demo, we just echo the "/siteverify" response:
-    response.redirect(302, "/")
+    response.status(200).send("Vaildate OK")
 }
