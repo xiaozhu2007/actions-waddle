@@ -1,10 +1,10 @@
-module.exports = function handler(request, response) {
+module.exports = (request, response) => {
     const SECRET_KEY = '0x4AAAAAAABBzssgfcpBXVvAoaR03SGp6Gg';
     try {
         const body = request.body;
-      } catch (e) {
+    } catch (e) {
         return response.status(400).json({ error: e });
-      }
+    }
     // Turnstile injects a token in "cf-turnstile-response".
     const token = body.token || null;
     // Validate the token by calling the "/siteverify" API.
