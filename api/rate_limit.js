@@ -1,9 +1,4 @@
 module.exports = (request, response) => {
-    try {
-        const t = request.body,token;
-    } catch (e) {
-        return response.status(400).json({ error: e });
-    }
     /*
         fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
             body: `secret=0x4AAAAAAABBzssgfcpBXVvAoaR03SGp6Gg&response=${request.body.token}`,
