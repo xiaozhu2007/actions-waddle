@@ -14,5 +14,7 @@ module.exports = (request, response) => {
     // Validate login, redirect user, etc.
     // For this demo, we just echo the "/siteverify" response:
     */
+
+    console.log(request.body)
     return response.status(200).send("Vaildate OK")
 }
