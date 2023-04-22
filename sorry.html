@@ -45,7 +45,7 @@
       turnstile.render('.captcha', {
         sitekey: '0x4AAAAAAABBzidMnnzlG92Z',
         callback: function (token) {
-          console.log(`[Turnstile Challenge] T0ken:${token}`);
+          console.info(`[Turnstile Challenge] T0ken:${token}`);
           let formData = new FormData();
           formData.append('secret', "0x4AAAAAAABBzssgfcpBXVvAoaR03SGp6Gg");
           formData.append('response', token);
