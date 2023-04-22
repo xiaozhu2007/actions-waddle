@@ -27,15 +27,11 @@
       ]
     },
     {
-      "source": "/sorry.html",
+      "source": "/*",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
           "value": "*"
-        },
-        {
-          "key": "X-SourceCode",
-          "value": "github.com/xiaozhu2007/actions-waddle"
         }
       ]
     }
