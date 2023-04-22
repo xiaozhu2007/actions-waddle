@@ -5,18 +5,12 @@ module.exports = (request, response) => {
     } catch (e) {
         return response.status(400).json({ error: e });
     }
-    // Turnstile injects a token in "cf-turnstile-response".
-    const token = body.token || null;
-    // Validate the token by calling the "/siteverify" API.
-    let Data = `secret=${SECRET_KEY}&response=${token}`
 
-    const result = fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
-        body: Data,
+    const result = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+        body: `secret=0x4AAAAAAABBzssgfcpBXVvAoaR03SGp6Gg&response=${request.body.token}`,
         method: 'POST',
     });
-
-    const outcome = result.json();
-    if (!outcome.success) return response.status(400).send("Failed");
+    // if (!result.json().success) return response.status(400).send("Failed");
     // The Turnstile token was successfuly validated. Proceed with your application logic.
     // Validate login, redirect user, etc.
     // For this demo, we just echo the "/siteverify" response:
