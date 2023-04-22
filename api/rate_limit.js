@@ -1,4 +1,4 @@
-export default function handler(request, response) {
+module.exports = function handler(request, response) {
     const SECRET_KEY = '0x4AAAAAAABBzssgfcpBXVvAoaR03SGp6Gg';
     try {
         const body = request.body;
