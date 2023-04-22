@@ -16,9 +16,7 @@ module.exports = (request, response) => {
     });
 
     const outcome = await result.json();
-    if (!outcome.success) {
-        return response.status(400).send("Failed")
-    }
+    if (!outcome.success) return response.status(400).send("Failed");
     // The Turnstile token was successfuly validated. Proceed with your application logic.
     // Validate login, redirect user, etc.
     // For this demo, we just echo the "/siteverify" response:
