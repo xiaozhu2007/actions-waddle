@@ -1,37 +1,64 @@
 {
   "headers": [
     {
-      "source": "/gen_204",
-      "headers" : [
+      "source": "/",
+      "headers": [
         {
-          "key" : "Cache-Control",
-          "value" : "public, max-age=0, must-revalidate"
+          "key": "Cache-Control",
+          "value": "public, max-age=600, must-revalidate"
         },
         {
-          "key" : "X-SourceCode",
-          "value" : "github.com/xiaozhu2007/actions-waddle"
+          "key": "X-SourceCode",
+          "value": "github.com/xiaozhu2007/actions-waddle"
         }
       ]
     },
     {
-      "source": "/",
-      "headers" : [
+      "source": "/gen_204",
+      "headers": [
         {
-          "key" : "Cache-Control",
-          "value" : "public, max-age=600, must-revalidate"
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
         },
         {
-          "key" : "X-SourceCode",
-          "value" : "github.com/xiaozhu2007/actions-waddle"
+          "key": "X-SourceCode",
+          "value": "github.com/xiaozhu2007/actions-waddle"
+        }
+      ]
+    },
+    {
+      "source": "/sorry.html",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "X-SourceCode",
+          "value": "github.com/xiaozhu2007/actions-waddle"
         }
       ]
     }
   ],
-  "regions": ["hkg1"],
+  "regions": [
+    "hkg1"
+  ],
   "rewrites": [
-    { "source": "/gen_204", "destination": "/api/gen_204" },
-    { "source": "/client_204", "destination": "/api/gen_204" },
-    { "source": "/:match*", "destination": "https://www.google.com.hk/:match*" },
-    { "source": "/", "destination": "https://www.google.com.hk/" }
+    {
+      "source": "/gen_204",
+      "destination": "/api/gen_204"
+    },
+    {
+      "source": "/client_204",
+      "destination": "/api/gen_204"
+    },
+    {
+      "source": "/:match*",
+      "destination": "https://www.google.com.hk/:match*"
+    },
+    {
+      "source": "/",
+      "destination": "https://www.google.com.hk/"
+    }
   ]
 }
