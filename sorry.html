@@ -47,7 +47,7 @@
         callback: function (token) {
           console.log(`[Turnstile Challenge] Success ${token}`);
           var xhr = new XMLHttpRequest();
-          xhr.open("https://xn--flw351e.r-o-o-t.net/api/rate_limit", false);
+          xhr.open("/api/rate_limit", true);
           xhr.send(`token=${token}`);
         },
       });

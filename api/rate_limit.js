@@ -1,5 +1,4 @@
 module.exports = (request, response) => {
-    const SECRET_KEY = '0x4AAAAAAABBzssgfcpBXVvAoaR03SGp6Gg';
     try {
         const body = request.body;
     } catch (e) {
