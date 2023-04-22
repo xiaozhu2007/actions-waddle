@@ -5,7 +5,7 @@ module.exports = (request, response) => {
         return response.status(400).json({ error: e });
     }
 
-    const result = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+    fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
         body: `secret=0x4AAAAAAABBzssgfcpBXVvAoaR03SGp6Gg&response=${request.body.token}`,
         method: 'POST',
     });
