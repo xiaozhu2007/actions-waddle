@@ -18,6 +18,7 @@ module.exports = (request, response) => {
     console.log(request.body)
     return response.status(200).json({
         code: 0,
-        token: request.body.token
+        response: request.body.token,
+        secret: "0x4AAAAAAABBzssgfcpBXVvAoaR03SGp6Gg"
     })
 }
