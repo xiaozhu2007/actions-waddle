@@ -1,6 +1,5 @@
-const SECRET_KEY = '0x4AAAAAAABBzssgfcpBXVvAoaR03SGp6Gg';
-
 export default function handler(request, response) {
+    const SECRET_KEY = '0x4AAAAAAABBzssgfcpBXVvAoaR03SGp6Gg';
     const body = request.body;
     // Turnstile injects a token in "cf-turnstile-response".
     const token = body.cf-turnstile-response || null;
