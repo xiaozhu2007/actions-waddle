@@ -27,7 +27,7 @@
       ]
     },
     {
-      "source": "/*",
+      "source": "/sorry.html",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
