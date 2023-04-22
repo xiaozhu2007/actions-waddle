@@ -1,5 +1,3 @@
-// This is the demo secret key. In prod, we recommend you store
-// your secret key(s) safely.
 const SECRET_KEY = '0x4AAAAAAABBzssgfcpBXVvAoaR03SGp6Gg';
 
 export default function handler(request, response) {
@@ -7,9 +5,7 @@ export default function handler(request, response) {
     // Turnstile injects a token in "cf-turnstile-response".
     const token = body.get('cf-turnstile-response');
     // Validate the token by calling the "/siteverify" API.
-    let formData = new FormData();
-    formData.append('secret', SECRET_KEY);
-    formData.append('response', token);
+    let formData = `secret=${SECRET_KEY}&response=${token}`
 
     const result = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
         body: formData,
