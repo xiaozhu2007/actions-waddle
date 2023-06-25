@@ -49,6 +49,10 @@
       "destination": "/api/gen_204"
     },
     {
+      "source": "/g_204",
+      "destination": "/api/gen_204"
+    },
+    {
       "source": "/sorry/index",
       "destination": "/sorry.html"
     },
