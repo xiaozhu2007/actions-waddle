@@ -18,7 +18,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
+          "value": "public, max-age=86400, must-revalidate"
         },
         {
           "key": "X-SourceCode",
@@ -42,14 +42,6 @@
   "rewrites": [
     {
       "source": "/gen_204",
-      "destination": "/api/gen_204"
-    },
-    {
-      "source": "/client_204",
-      "destination": "/api/gen_204"
-    },
-    {
-      "source": "/g_204",
       "destination": "/api/gen_204"
     },
     {
