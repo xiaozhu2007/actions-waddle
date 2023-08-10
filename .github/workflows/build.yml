@@ -6,25 +6,14 @@ on:
     branches:
     - master
   workflow_dispatch:
+  schedule:
+  - cron: "11 4 */7 * *"
 
 jobs:
   main:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Process
-        run: bash run.sh 
-      - name: Send mail
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.mailersend.net
-          server_port: 587
-          username: ${{secrets.MAIL_USERNAME}}
-          password: ${{secrets.MAIL_PASSWORD}}
-          subject: '[HelloTools Cloud] 您的验证码'
-          # Optional HTML body read from file:
-          html_body: file://otp.html
-          to: ${{secrets.MAIL_TO}}
-          from: HelloTools Cloud
-          priority: high
+      - name: 2M.PUB 域名续期
+        run: |
+          curl -s https://2m.statict.cn/ren?fqdn=chushengict.2m.pub&t=80a42e88d16a1446f5cf3832b718f540
+          curl -s https://2m.statict.cn/ren?fqdn=haoshenict.2m.pub&t=47456ebb542ebfe4847419f85e129159
