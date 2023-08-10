@@ -24,15 +24,6 @@ jobs:
           -H 'referer: https://2m.pub/' \
           -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36' \
           --compressed
-          curl -s 'https://2m.statict.cn/ren?fqdn=haoshenict.2m.pub&t=47456ebb542ebfe4847419f85e129159' \
-          -H 'accept: */*' \
-          -H 'accept-language: zh-CN,zh;q=0.9,en;q=0.8' \
-          -H 'cache-control: no-cache' \
-          -H 'content-type: application/x-www-form-urlencoded' \
-          -H 'origin: https://2m.pub' \
-          -H 'referer: https://2m.pub/' \
-          -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36' \
-          --compressed
           curl -s 'https://2m.statict.cn/ren?fqdn=ictcrafts.2m.pub&t=6a7b8fce89cb0642fe9dc34f57fede47' \
           -H 'accept: */*' \
           -H 'accept-language: zh-CN,zh;q=0.9,en;q=0.8' \
@@ -42,3 +33,13 @@ jobs:
           -H 'referer: https://2m.pub/' \
           -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36' \
           --compressed
+          curl -s 'https://2m.statict.cn/ren?fqdn=ictser.2m.pub&t=b53ea6d9f49a19d56b98626696881f97' \
+          -H 'accept: */*' \
+          -H 'accept-language: zh-CN,zh;q=0.9,en;q=0.8' \
+          -H 'cache-control: no-cache' \
+          -H 'content-type: application/x-www-form-urlencoded' \
+          -H 'origin: https://2m.pub' \
+          -H 'referer: https://2m.pub/' \
+          -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36' \
+          --compressed
+          
