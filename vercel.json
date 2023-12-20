@@ -41,10 +41,6 @@
   ],
   "rewrites": [
     {
-      "source": "/gen_204",
-      "destination": "/api/gen_204"
-    },
-    {
       "source": "/sorry/index",
       "destination": "/sorry.html"
     },
