@@ -27,7 +27,7 @@
       ]
     },
     {
-      "source": "/sorry.html",
+      "source": "/captcha.html",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
@@ -40,10 +40,6 @@
     "hkg1"
   ],
   "rewrites": [
-    {
-      "source": "/sorry/index",
-      "destination": "/sorry.html"
-    },
     {
       "source": "/:match*",
       "destination": "https://www.google.com.hk/:match*"
