@@ -1,43 +1,74 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html dir="LTR">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1" />
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
+    <title>人 机 验 证 - Google 镜像站</title>
+  </head>
 
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="initial-scale=1" />
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
-  <title>人 机 验 证 - Google 镜像站</title>
-</head>
-
-<body style="
+  <body
+    style="
       font-family: arial, sans-serif;
       background-color: #fff;
       color: #000;
       padding: 20px;
       font-size: 18px;
-    ">
-  <div style="max-width: 400px">
-    <div class="captcha">
-      <div class="cf-turnstile" data-sitekey="0x4AAAAAAABBzidMnnzlG92Z"></div>
-    </div>
-    <hr noshade size="1" style="color: #ccc; background-color: #ccc" />
-    <br />
-    <div style="font-size: 13px">
-      我们的系统检测到您的计算机网络中存在异常流量。请稍后重新发送请求。<a href="#"
-        onclick="document.getElementById('infoDiv').style.display='block';">为什么会这样？</a><br /><br />
-      <div id="infoDiv" style="
+    "
+  >
+    <div style="max-width: 400px">
+      <div class="captcha">
+        <div
+          class="cf-turnstile"
+          data-sitekey="0x4AAAAAAABBzidMnnzlG92Z"
+          data-callback="turnstileCallback"
+        ></div>
+      </div>
+      <hr noshade size="1" style="color: #ccc; background-color: #ccc" />
+      <br />
+      <div style="font-size: 13px">
+        我们的系统检测到您的计算机网络中存在异常流量。请稍后重新发送请求。<a
+          href="#"
+          onclick="document.getElementById('infoDiv').style.display='block';"
+          >为什么会这样？</a
+        ><br /><br />
+        <div
+          id="infoDiv"
+          style="
             display: none;
             background-color: #eee;
             padding: 10px;
             margin: 0 0 15px 0;
             line-height: 1.4em;
-          ">
-        如果我们的系统自动检测到从您的计算机网络发出的请求可能违反<a
-          href="/#/terms">服务条款</a>，就会显示此网页。这些请求一旦停止，此阻断即会失效。<br /><br />该流量可能是由恶意软件、浏览器插件或发送自动请求的脚本发出的。如果您与他人共享网络连接，请向管理员寻求帮助
-        &mdash; 这可能是由多台计算机使用同一 IP 地址导致的。<a
-          href="/#/more">了解详情</a><br /><br />有时，如果您使用的是自动程序普遍使用的高级条款或者正在快速连续地发送请求，则可能会出现此网页。<br /><br />
+          "
+        >
+          如果我们的系统自动检测到从您的计算机网络发出的请求可能违反<a
+            href="/#/terms"
+            >服务条款</a
+          >，就会显示此网页。这些请求一旦停止，此阻断即会失效。<br /><br />该流量可能是由恶意软件、浏览器插件或发送自动请求的脚本发出的。如果您与他人共享网络连接，请向管理员寻求帮助
+          &mdash; 这可能是由多台计算机使用同一 IP 地址导致的。<a href="/#/more"
+            >了解详情</a
+          ><br /><br />有时，如果您使用的是自动程序普遍使用的高级条款或者正在快速连续地发送请求，则可能会出现此网页。<br />一旦您通过了验证，我们会设置一些有关绕过验证页面的
+          Cookies，随后您不再应该看到这个页面。<br />
+        </div>
+        <br />
       </div>
-      <br />
     </div>
-  </div>
-</body>
+    <script>
+      function setCookie(cname, cvalue, ex) {
+        var d = new Date();
+        d.setTime(d.getTime() + ex * 60 * 60 * 1000);
+        var expires = "expires=" + d.toGMTString();
+        document.cookie = cname + "=" + cvalue + "; " + expires;
+      }
+
+      function turnstileCallback(token) {
+        setCookie("isHuman", "true", 1); // 一小时过期
+        setCookie("bypass_captcha", "true", 1); // 一小时过期
+        setTimeout(function () {
+          window.location.pathname = "/";
+        }, 1000);
+      }
+    </script>
+  </body>
 </html>
