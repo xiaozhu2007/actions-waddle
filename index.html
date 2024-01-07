@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home - Google Mirror</title>
+    <style type="text/css" media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+        padding: 3px;
+      }
+      #searchMsg {
+        width: 540px;
+        height: 34px;
+        vertical-align: top;
+        font-size: 14px;
+        padding-left: 3px;
+      }
+      li:hover {
+        background-color: #a8d5fc;
+        cursor: default;
+      }
+      ul li:first-child {
+        margin-top: 0;
+      }
+      ul {
+        border: 1px solid #b6b6b6;
+        border-top: 0;
+        display: none;
+      }
+      #btn {
+        color: #fff;
+        line-height: 38px;
+        padding: 0 8px;
+        font-size: 14px;
+        display: inline-block;
+        height: 38px;
+        background: #3385ff;
+        cursor: pointer;
+      }
+      .searchbar {
+        font-size: 0;
+      }
+      .search {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        margin-left: -308px;
+        margin-top: -124px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="search">
+      <div class="searchbar">
+        <input type="text" id="searchMsg" autocomplete="off" /><span id="btn"
+          >Search</span
+        >
+      </div>
+      <ul id="list">
+        <li id="quickSearch" style="pointer-events: none">按回车键搜索 ...</li>
+        <li style="pointer-events: none">------------------------</li>
+        <li style="pointer-events: none">
+          本站现启用新主页，目的是为了减少带宽开销以及加速访问
+        </li>
+        <li style="pointer-events: none">
+          本站仅用于学术, 如果用于非学术我们将封禁您
+        </li>
+        <li style="pointer-events: none">
+          如果你发现了什么 Bug ,可以联系站长处理
+        </li>
+        <li style="pointer-events: none">联系站长: hackpig520@duck.com</li>
+        <li style="pointer-events: none">
+          当前页更新日期: 2024-01-07 20:00:00
+        </li>
+      </ul>
+    </div>
+    <script>
+      var searchMsg = document.getElementById("searchMsg");
+      var list = document.getElementById("list");
+      var btn = document.getElementById("btn");
+      var quickSearch = document.getElementById("quickSearch");
+      function hide(e) {
+        e.style.display = "none";
+      }
+      function show(e) {
+        e.style.display = "block";
+      }
+      document.onkeydown = () => {
+        if (window.event && window.event.key == "F12") {
+          return false;
+        } else if (window.event.key == "Enter") {
+          window.location.href = `/search?q=${encodeURIComponent(
+            searchMsg.value
+          )}`;
+        }
+      };
+      searchMsg.onkeyup = function () {
+        (this.value ? show : hide)(list);
+        quickSearch.innerText = "按回车键搜索 " + this.value;
+      };
+      list.onclick = function (e) {
+        var t = (e = e || window.event).target || e.srcElement;
+        "LI" == t.nodeName && (searchMsg.value = t.innerHTML), hide(list);
+      };
+      btn.onclick = function () {
+        location.href = `/search?q=${encodeURIComponent(searchMsg.value)}`;
+      };
+    </script>
+  </body>
+</html>
