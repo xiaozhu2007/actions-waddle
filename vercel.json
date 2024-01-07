@@ -43,10 +43,6 @@
     {
       "source": "/:match*",
       "destination": "https://www.google.com.hk/:match*"
-    },
-    {
-      "source": "/",
-      "destination": "https://www.google.com.hk/"
     }
   ]
 }
