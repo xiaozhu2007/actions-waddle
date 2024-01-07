@@ -3,10 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <title>Home - Google Mirror</title>
-    <script src="https://cdn.jsdelivr.net/npm/devfools/dist/index.min.js"></script>
-    <script>
-      devfools('all')
-    </script>
     <style type="text/css" media="screen">
       * {
         margin: 0;
@@ -57,14 +53,14 @@
       }
     </style>
   </head>
-  <body>
+  <body data-clarity-unmask="true">
     <div class="search">
-      <div class="searchbar">
+      <div class="searchbar" data-clarity-unmask="true">
         <input type="text" id="searchMsg" autocomplete="off" /><span id="btn"
           >Search</span
         >
       </div>
-      <ul id="list">
+      <ul id="list" data-clarity-unmask="true">
         <li id="quickSearch" style="pointer-events: none">按回车键搜索 ...</li>
         <li style="pointer-events: none">------------------------</li>
         <li style="pointer-events: none">
